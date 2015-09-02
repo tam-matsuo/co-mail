@@ -19,3 +19,8 @@ build:
         name: Run phpunit
         code: |
           vendor/bin/phpunit laravel
+  after-steps:
+    - wantedly/pretty-slack-notify:
+        webhook_url: $SLACK_WEBHOOK_URL
+        channel: test
+        username: wercker
