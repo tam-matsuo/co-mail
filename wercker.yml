@@ -1,4 +1,4 @@
-box: alanbem/wercker-php
+box: boedy/wercker-php
 
 services:
   - id: mysql
