@@ -1,0 +1,19 @@
+box: wercker/php
+
+services:
+  - id: mysql
+    env:
+      MYSQL_ROOT_PASSWORD: rootpasswd
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: testpasswd
+      MYSQL_DATABASE: testdb
+
+build:
+  steps:
+    - script:
+        name: composer
+        code: composer install
+    - script:
+      name: phpunit
+      code: |
+        vendor/bin/phpunit laravel
