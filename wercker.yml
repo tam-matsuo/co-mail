@@ -8,12 +8,14 @@ services:
       MYSQL_PASSWORD: testpasswd
       MYSQL_DATABASE: testdb
 
+
 build:
   steps:
     - script:
-        name: composer
-        code: composer install
+        name: composer install
+        code: |
+          composer install
     - script:
-      name: phpunit
-      code: |
-        vendor/bin/phpunit laravel
+        name: Run phpunit
+        code: |
+          vendor/bin/phpunit laravel
